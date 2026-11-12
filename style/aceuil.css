@@ -1,0 +1,109 @@
+body {
+    background-image: url("/img/BackGround.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+nav{
+    background-color: black;
+    padding: 4px;
+    display: flex;
+    border: 1px solid rgb(147, 147, 255);
+    text-align: center;
+    align-items: center;
+    flex-direction: row;
+    margin: auto;
+    gap: 10px;
+    font-family: Arial;
+    border-radius: 15px;
+    height: fit-content;
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(147, 147, 255);
+    border: 2px solid  rgb(147, 147, 255);
+    border-radius: 5px;
+    padding: 2px;
+    height: fit-content;
+}
+
+.presentation {
+    font-family: Arial;
+    color: rgb(147, 147, 255);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+    text-align: center;
+}
+
+.titre_sct {
+    font-size: 600%;
+    color: rgb(193, 193, 223);
+    display: flex;
+    justify-content: center;
+    text-decoration: underline;
+    align-items: center;
+    font-style: italic;
+    text-shadow: 0px 3px 5px #3f82d3;
+}
+
+.resumer {
+    background-color: black;
+    width: fit-content;
+    padding: 10px;
+    margin: auto;
+    border-radius: 15px;
+    border: 1px solid rgb(147, 147, 255);
+    font-size: 150%;
+}
+
+.rgpd {
+    margin-top: 200px;
+    background-color: black;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid rgb(147, 147, 255);
+    margin-bottom: 10px;
+    gap: 10px;
+}
+
+.btn_rgpd {
+    background-color: antiquewhite;
+    border-radius: 5px;
+    border: 1px solid #05959f;
+    font-family: Arial;
+    text-decoration: none;
+    border-color: 2px solid rgb(147, 147, 255);
+
+}
+
+.rgpd a {
+    text-decoration: none;
+    gap: 10px;
+    margin: 10px;
+    background-color: rgb(0, 0, 0);
+    color: rgb(147, 147, 255);
+}
+
+.logo_img {
+    width: 20%;
+    padding-right: 10px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    font-weight: bold;
+    color: rgb(222, 222, 238);
+    border-right: 1px solid #cbdaec;
+}
+
+.sct {
+    color: rgb(80, 65, 216);
+    margin: 10px;
+}
+

@@ -1,0 +1,125 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+body {
+    background-image: url("/img/BackGround.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    font-family: Arial;
+    text-align: center;
+}
+
+        header {
+            text-align: center;
+            padding: 70px 20px;
+            background: linear-gradient(135deg, #101c30, #006b83);
+        }
+
+        header h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        header p {
+            color: #c4dce5;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: #151b26;
+            border: 1px solid #263447;
+            border-radius: 14px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: #00d9ff;
+        }
+
+        .card img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card h2 {
+            color: #00d9ff;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #aab5c5;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #66758a;
+            border-top: 1px solid #263447;
+        }
+
+nav{
+    background-color: black;
+    padding: 4px;
+    display: flex;
+    border: 1px solid rgb(147, 147, 255);
+    text-align: center;
+    align-items: center;
+    flex-direction: row;
+    margin: auto;
+    gap: 10px;
+    font-family: Arial;
+    border-radius: 15px;
+    height: fit-content;
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(147, 147, 255);
+    border: 2px solid  rgb(147, 147, 255);
+    border-radius: 5px;
+    padding: 2px;
+    height: fit-content;
+}
+.logo_img {
+    width: 20%;
+    padding-right: 10px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    font-weight: bold;
+    color: rgb(222, 222, 238);
+    border-right: 1px solid #cbdaec;
+}
+
+.sct {
+    color: rgb(80, 65, 216);
+    margin: 10px;
+}
