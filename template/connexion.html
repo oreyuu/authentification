@@ -1,38 +1,47 @@
+
 <!DOCTYPE html>
-<-- --/>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style/connexion.css">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/connexion.css') }}">
+
     <title>Login</title>
 </head>
+
 <body>
-    <nav>   
-        <p class="logo"><img class="logo_img" src="../img/LogoBaveLeVouill.png" alt="Logo">BaveLeVouill <span class="sct">sociéte</span></p> 
+
+    <nav>
+        <p class="logo">
+            <img class="logo_img" src="{{ url_for('static', filename='img/LogoBaveLeVouill.png') }}" alt="Logo">
+            BaveLeVouill <span class="sct">sociéte</span>
+        </p>
+
         <a href="/actevolis">Equipe Actevolis</a>
-        <a href="index.html">Aceuil</a>
+        <a href="/">Accueil</a>
         <a href="/connexion">Login</a>
     </nav>
 
     <form class="formulaire" action="/envoyer" method="POST">
-        <input type="text" name="identifient" placeholder="Identifient">
-        <input type="password" name="password" placeholder="Mot De passe">
+        <input type="text" name="identifient" placeholder="Identifiant">
 
-        <button>connexion</button>
+        <input type="password" name="password" placeholder="Mot de passe">
+
+        <button type="submit">Connexion</button>
     </form>
 
     <footer>
+        <div class="rgpd">
+            <a class="btn_rgpd" href="/mentions-legales">
+                Mentions légales
+            </a>
 
-    <div class="rgpd">
-        <a class="btn_rgpd" href="mention_legal.html">
-            Mentions légales
-        </a>
+            <a class="btn_rgpd" href="/rgpd">
+                Politique de confidentialité
+            </a>
+        </div>
+    </footer>
 
-        <a class="btn_rgpd" href="rgpd.html">
-            Politique de confidentialité
-        </a>
-    </div>
-</footer>
 </body>
 </html>

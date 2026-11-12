@@ -3,7 +3,12 @@ from flask import Flask, request, render_template, session, redirect
 import mariadb
 import os
 
-app = Flask(__name__, template_folder="../template")
+app = Flask(
+    __name__,
+    template_folder="../template",
+    static_folder="..",
+    static_url_path="/static"
+)
 
 # Configuration Flask
 app.secret_key = os.environ["FLASK_SECRET_KEY"]

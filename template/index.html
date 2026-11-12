@@ -1,41 +1,52 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style/aceuil.css">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/aceuil.css') }}">
+
     <title>Intranet</title>
 </head>
+
 <body>
-    <nav>   
-        <p class="logo"><img class="logo_img" src="../img/LogoBaveLeVouill.png" alt="Logo">BaveLeVouill <span class="sct">sociéte</span></p> 
+
+    <nav>
+        <p class="logo">
+            <img class="logo_img" src="{{ url_for('static', filename='img/LogoBaveLeVouill.png') }}" alt="Logo">
+            BaveLeVouill <span class="sct">sociéte</span>
+        </p>
+
         <a href="/actevolis">Equipe Actevolis</a>
-        <a href="index.html">Aceuil</a>
+        <a href="/">Accueil</a>
         <a href="/connexion">Login</a>
     </nav>
 
     <div class="presentation">
-        <h2 class="titre_sct">BaveLeVouill <span class="sct"> Sociéter</span></h2>
+        <h2 class="titre_sct">
+            BaveLeVouill <span class="sct">Sociéter</span>
+        </h2>
+
         <div class="resumer">
-            <p>Bienvenue sur le site web de BaveLeVouill. <br>
-            BaveLeVouill est une Sociéter en colaboration avec mamamaletouille.
+            <p>
+                Bienvenue sur le site web de BaveLeVouill. <br>
+                BaveLeVouill est une Sociéter en colaboration avec mamamaletouille.
             </p>
-        </div> 
+        </div>
     </div>
 
-<footer>
-    <div class="rgpd">
-        <a class="btn_rgpd" href="mention_legal.html">
-            Mentions légales
-        </a>
+    <footer>
+        <div class="rgpd">
+            <a class="btn_rgpd" href="/mentions-legales">
+                Mentions légales
+            </a>
 
-        <a class="btn_rgpd" href="rgpd.html">
-            Politique de confidentialité
-        </a>
-    </div>
-    <-- --/>
+            <a class="btn_rgpd" href="/rgpd">
+                Politique de confidentialité
+            </a>
+        </div>
+    </footer>
 
-</footer>
 </body>
-
 </html>
