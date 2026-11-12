@@ -3,7 +3,7 @@ from flask import Flask, request, render_template, session, redirect
 import mariadb
 import os
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder="../template")
 
 # Configuration Flask
 app.secret_key = os.environ["FLASK_SECRET_KEY"]
@@ -91,6 +91,22 @@ def logout():
     session.clear()
 
     return redirect("/")
+
+@app.route("/connexion")
+def connexion_page():
+    return render_template("connexion.html")
+
+@app.route("/actevolis")
+def actevolis():
+    return render_template("actevolis.html")
+
+@app.route("/mentions-legales")
+def mentions_legales():
+    return render_template("mention_legal.html")
+
+@app.route("/rgpd")
+def rgpd():
+    return render_template("rgpd.html")
 
 
 # Lancement du serveur flask
