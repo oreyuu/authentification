@@ -9,7 +9,6 @@ app = Flask(
     static_folder="..",
     static_url_path="/static"
 )
-
 # Configuration Flask
 app.secret_key = os.environ["FLASK_SECRET_KEY"]
 
@@ -31,7 +30,7 @@ def connexion():
     cur = None
 
     try:
-        # Connexion à MariaDB
+        # Connexion a MariaDB
         conn = mariadb.connect(
             user="flask_user",
             password=os.environ["DB_PASSWORD"],
@@ -42,7 +41,7 @@ def connexion():
 
         cur = conn.cursor()
 
-        # Recherche de l'utilisateur
+        #Recherche de l'utilisateur
         query = """
             SELECT id, username, password_hash
             FROM users
