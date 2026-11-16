@@ -12,21 +12,87 @@
 <body>
 
     <nav>
-        <p class="logo">
-            <img class="logo_img" src="{{ url_for('static', filename='img/LogoBaveLeVouill.png') }}" alt="Logo">BaveLeVouill <span class="sct">sociéte</span>
-            <a href="/actevolis">Equipe Actevolis</a>
-            <a href="/">Accueil</a>
-            <a href="/connexion">Login</a>
-        </p>
-
         <a href="/actevolis">Equipe Actevolis</a>
         <a href="/">Accueil</a>
         <a href="/connexion">Login</a>
     </nav>
 
-    <div class="welcome">
-        <p>Welcome users !! Say "Hello World for the dev pls !!"</p>
+    <div class="utilisateur">
+        <p>Bienvenue <span id="user_name">{{ user }}</span></p>
+        <p>Votre rôle est <span id="user_role">{{ role_user }}</span></p>
     </div>
+
+    <div class="HyperVision">
+        <div class="serveur">
+            <div class="title_hypervision">
+                <h2>Serveur Web :</h2>
+            </div>
+            <p>status  : <span class="status">{{ srv_web }}</span></p>
+            <p>IP      : 10.37.55.220</p>
+            <p>Service : Nginx</p>
+        </div>
+
+        <div class="serveur">
+            <div class="title_hypervision">
+                <h2>Serveur BDD :</h2>
+            </div>
+            <p>status  : <span class="status">{{ srv_bdd }}</span></p>
+            <p>IP      : 10.37.55.221</p>
+            <p>Service : MariaDB</p>
+        </div>
+
+        <div class="serveur">
+            <div class="title_hypervision">
+                <h2>Serveur RustDesk :</h2>
+            </div>
+            <p>status  : <span class="status">{{ srv_rsdk }}</span></p>
+            <p>IP      : 10.37.55.226</p>
+            <p>Service : RustDesk</p>
+        </div>
+
+        <div class="serveur">
+            <div class="title_hypervision">
+                <h2>Serveur JumpServeur :</h2>
+            </div>
+            <p>status  : <span class="status">{{ srv_jmps }}</span></p>
+            <p>IP      : 10.37.55.227</p>
+            <p>Service : JumpServeur</p>
+        </div>
+
+        <div class="serveur">
+            <div class="title_hypervision">
+                <h2>Serveur GCML :</h2>
+            </div>
+            <p>status  : <span class="status">{{ srv_gcml }}</span></p>
+            <p>IP      : 10.37.55.225</p>
+            <p>Service : Apache Guacamole</p>
+        </div>
+    </div>
+
+
+    <div class="HyperVision2">
+        
+        <div class="serveur">
+            <div class="title_hypervision">
+                <h2>Serveur SAMBA AD :</h2>
+            </div>
+            <p>status  : <span class="status">{{ srv_smbd }}</span></p>
+            <p>IP      : 10.37.55.222</p>
+            <p>Service : SAMBA AD</p>
+        </div>
+
+        <div class="serveur">
+            <div class="title_hypervision">
+                <h2>Serveur Win25 :</h2>
+            </div>
+            <p>status  : <span class="status">{{ srv_win }}</span></p>
+            <p>IP      : 10.37.55.225</p>
+            <p>Service : controleur de domaine</p>
+        </div>
+
+    </div>
+
+
 
         <footer>
         <div class="rgpd">
