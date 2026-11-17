@@ -127,4 +127,68 @@ nav a {
     gap: 10px;
     padding: 10px;
     margin-top: 20px;
+    font-family: Arial;
+}
+
+#user_role {
+    color: red;
+}
+
+#user_name {
+    text-decoration: underline;
+}
+
+.formulaire {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 30%;
+    margin: auto;
+    gap: 10px;
+    margin-top: 100px;
+    align-items: center;
+    background-color: black;
+    padding: 10px;
+    border-radius: 15px;
+    border: 2px solid rgb(147, 147, 255);
+    box-shadow: 0px 0px 0px red;
+    color: rgb(147, 147, 255);
+    font-family: Arial;
+}
+
+input {
+    background-color: rgb(36, 35, 35);
+    border: 2px solid rgb(147, 147, 255);
+    border-radius: 15px;
+    width: 50%;
+    height: 30px;
+    color: antiquewhite;
+}
+
+#debug_create_user {
+    color: green;
+}
+
+.selection_role {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid rgb(147, 147, 255);
+    padding: 10px;
+    gap: 5px;
+    border-radius: 15px;
+}
+
+
+select {
+    background-color: rgb(134, 107, 255);
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 10px;
+    color: antiquewhite;
+}
+
+button {
+    background-color: rgb(145, 145, 235);
+    border: 1px solid white;
+    border-radius: 5px;
+    height: 20px;
 }

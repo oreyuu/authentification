@@ -3,6 +3,7 @@ import mariadb
 import os
 import hashlib
 import subprocess
+import datetime
 
 app = Flask(
     __name__,
@@ -151,6 +152,86 @@ def mentions_legales():
 @app.route("/rgpd")
 def rgpd():
     return render_template("rgpd.html")
+
+
+@app.route("/admin", methods=["GET", "POST"])
+def admin():
+    if "user_id" not in session:
+        return redirect("/")
+
+    identifiant_admin = session.get("username", "Inconnu")
+    debug_message = ""
+
+    if request.method == "POST":
+        new_identifiant = request.form.get("new_identifient")
+        new_password = request.form.get("new_password")
+        new_password_retry = request.form.get("new_password_retry")
+        new_role = request.form.get("pays")
+
+        heure = datetime.datetime.now()
+        heure_formate = heure.strftime("%H:%M:%S")
+
+        if new_password == new_password_retry:
+            succes, message = inserer_utilisateur(new_identifiant, new_password, new_role)
+            if succes:
+                debug_message = "Reussi"
+                print(f"DEBUG : Nouvel utilisateur créé par {identifiant_admin} à {heure_formate}")
+            else:
+                debug_message = message
+        else:
+            debug_message = "Les mots de passe ne correspondent pas"
+            print(f"DEBUG : Mot de passe incorrect entré par {identifiant_admin} à {heure_formate}")
+
+    statuts = {
+        "srv_web": tester_ping("10.37.55.220"),
+        "srv_bdd": tester_ping("10.37.55.221"),
+        "srv_rsdk": tester_ping("10.37.55.226"),
+        "srv_jmps": tester_ping("10.37.55.227"),
+        "srv_gcml": tester_ping("10.37.55.225"),
+        "srv_smbd": tester_ping("10.37.55.222"),
+        "srv_win": tester_ping("10.37.55.225")
+    }
+
+    return render_template(
+        "dashboard.html",
+        debug=debug_message,
+        user=session.get("username"),
+        role_user=session.get("role"),
+        **statuts
+    )
+
+
+def inserer_utilisateur(new_identifiant, new_password, new_role):
+    mot_de_passe_encode = new_password.encode("utf-8") 
+    hash_hex = hashlib.sha256(mot_de_passe_encode).hexdigest()
+
+    conn = None
+    cur = None
+    try:
+        conn = mariadb.connect(
+            user="flask_user",
+            password=os.environ["DB_PASSWORD"],
+            host="10.37.55.221",
+            port=3306,
+            database="authentification"
+        )
+        cur = conn.cursor()
+
+        query = """
+            INSERT INTO users (username, password_hash, role) VALUES (?, ?, ?)
+        """
+        cur.execute(query, (new_identifiant, hash_hex, new_role))
+        conn.commit()
+        return True, "Reussi"
+
+    except mariadb.Error as e:
+        print(f"Erreur MariaDB lors de l'insertion : {e}")
+        return False, "Erreur base de données"
+    finally:
+        if cur is not None:
+            cur.close()
+        if conn is not None:
+            conn.close()
 
 
 # Lancement du serveur flask

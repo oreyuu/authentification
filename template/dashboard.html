@@ -90,9 +90,30 @@
             <p>Service : controleur de domaine</p>
         </div>
 
+
     </div>
 
 
+    <form class="formulaire" action="/admin" method="POST">
+        <p>Ajouter un utilisateur</p>
+        <p id="debug_create_user">{{ debug }}</p>
+        <input type="text" name="new_identifient" placeholder="Identifient">
+        <input type="password" name="new_password" placeholder="Mot de passe">
+        <input type="password" name="new_password_retry" placeholder="Retapez le mot de passe">
+
+        <div class="selection_role">
+            <label for="role">Choisissez le role :</label>
+
+            <select name="role" id="role">
+                <option value="amd">Admin</option>
+                <option value="cmt">Compta</option>
+                <option value="usr">Utilisateur</option>
+                <option value="blv">BaveLeVouil</option>
+            </select>
+        </div>
+
+        <button>Ajouter</button>
+    </form>
 
         <footer>
         <div class="rgpd">
